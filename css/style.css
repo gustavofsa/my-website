@@ -4,10 +4,30 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #333533;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   height: 100vh;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 200px;
+  }
 }
 
 .header-background {
@@ -28,8 +48,19 @@ body {
 
 .header-text {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.menu {
+  background-color: #242423;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
 }
 
 .menu ul {
@@ -38,7 +69,7 @@ body {
   align-items: center;
   padding: 15px 10%;
   list-style: none;
-  background-color: #242423;
+  font-weight: 600;
 }
 
 .menu li {
@@ -49,7 +80,6 @@ body {
 .menu a {
   color: whitesmoke;
   font-size: 18px;
-  text-decoration: none;
 }
 
 .menu a:hover {
@@ -59,16 +89,15 @@ body {
 
 .avatar {
   display: block;
-  justify-content: center;
-  width: 200px;
+  width: 160px;
   border-radius: 120px;
   margin: 0 auto;
-  margin-top: 60px;
   border: 4px solid #ce5578 ;
 }
 
 .title {
   margin-top: 20px;
+  font-size: 2.5em; 
 }
 
 .title, 
@@ -81,5 +110,117 @@ body {
 .subtitle {
   margin-top: 10px;
   font-style: italic;
+  font-size: 1.6em;
 }
 
+.about-text {
+  width: 30%;
+}
+
+.about {
+  min-height: 100vh;
+  padding: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #FFF;
+  background-color: #ce5578;
+}
+
+.about h2 {
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+
+.about-img {
+  margin-top: 1.5em;
+  width: 25vw;
+  object-fit: contain;
+}
+
+.contact,
+.portifolio {
+  min-height: 100vh;
+  padding: 3em;
+  text-align: center;
+  color: #FFF;
+}
+
+.contact h2,
+.portifolio h2 {
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+
+.portifolio .grid {
+  display: grid;
+  gap: 2.5em;
+}
+
+@media (min-width: 580px) {
+  .portifolio .grid {
+    grid-template-columns: 320px 320px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 880px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(3, 340px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 6em - 35px - 1.5em);
+  }
+}
+
+.portifolio-img {
+  height: 220px;
+  width: 320px;
+  object-fit: cover;
+  object-position: left bottom;
+  border-radius: 10px;
+  border: 3px solid lightcoral;
+  transition: all 500ms;
+}
+
+.portifolio-img:hover {
+  border: none;
+  transform: scale(1.1);
+}
+
+.contact {
+  background-color: #ce5578;
+}
+
+.contact a {
+  color: #FFF;
+  font-size: 3em;
+  margin-right: 20px;
+  transition: text-shadow 1s;
+}
+
+.contact a:active,
+.contact a:hover {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+}
+
+#email:hover,
+#github:hover {
+  color: #242423;
+}
+
+#linkedin:hover {
+  color: #0e76a8;
+}
+
+#twitter:hover {
+  color: #00acee;
+}
+
+footer {
+  color: #FFF;
+  text-align: center;
+  display: block;
+  bottom: 0;
+  margin-top: 100px;
+}
