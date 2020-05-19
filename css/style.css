@@ -19,8 +19,11 @@ a {
   text-decoration: none;
 }
 
-/* se a tela tiver pelo menos 400px vai carregar estes estilos */
-@media (min-width: 600px) {
+/* se a tela tiver pelo menos 400px vai carregar estes estilos
+mantem os estilos < 600 < muda para o que foi definido abaixo
+*/
+
+@media (min-width: 600px) {   
   body {
     font-size: 14px;
   }
@@ -113,13 +116,13 @@ a {
   font-size: 1.6em;
 }
 
-.about-text {
+/* .about-text {
   width: 30%;
-}
+} */
 
 .about {
   min-height: 100vh;
-  padding: 3em;
+  padding: 6em 3em 3em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -140,8 +143,8 @@ a {
 
 .contact,
 .portifolio {
-  min-height: 100vh;
-  padding: 3em;
+  /* min-height: 100vh; */
+  padding: 4em;
   text-align: center;
   color: #FFF;
 }
@@ -157,25 +160,9 @@ a {
   gap: 2.5em;
 }
 
-@media (min-width: 580px) {
-  .portifolio .grid {
-    grid-template-columns: 320px 320px;
-    justify-content: center;
-  }
-}
-
-@media (min-width: 880px) {
-  .portifolio .grid {
-    grid-template-columns: repeat(3, 340px);
-    align-content: center;
-    justify-content: center;
-    height: calc(100vh - 6em - 35px - 1.5em);
-  }
-}
-
 .portifolio-img {
-  height: 220px;
-  width: 320px;
+  height: 180px;
+  width: 240px;
   object-fit: cover;
   object-position: left bottom;
   border-radius: 10px;
@@ -186,6 +173,36 @@ a {
 .portifolio-img:hover {
   border: none;
   transform: scale(1.1);
+}
+
+@media (min-width: 675px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(2, 320px);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 880px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(3, 240px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 6em - 35px - 1.5em);
+  }
+}
+
+@media (min-width: 1250px) {
+  .portifolio .grid {
+    grid-template-columns: repeat(3, 360px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 6em - 35px - 1.5em);
+  }
+
+  .portifolio-img {
+    height: 220px;
+    width: 340px;
+  }
 }
 
 .contact {
