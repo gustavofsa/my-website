@@ -116,9 +116,10 @@ mantem os estilos < 600 < muda para o que foi definido abaixo
   font-size: 1.6em;
 }
 
-/* .about-text {
-  width: 30%;
-} */
+.about-text {
+  width: 50%;
+  line-height: 1.5;
+}
 
 .about {
   min-height: 100vh;
@@ -136,9 +137,29 @@ mantem os estilos < 600 < muda para o que foi definido abaixo
 }
 
 .about-img {
-  margin-top: 1.5em;
   width: 25vw;
   object-fit: contain;
+}
+
+@media(max-width: 700px) {
+  
+  .about-text {
+    width: auto;
+    text-align: initial;
+  }
+
+  .about {
+    min-height: 100vh;
+    padding: 6em 3em 3em;
+    display: block;
+
+  }
+
+  .about-img {
+    margin-top: 1.5em;
+    width: 35vw;
+  }
+
 }
 
 .contact,
